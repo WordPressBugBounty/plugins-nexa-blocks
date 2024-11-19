@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/select",
+  "version": "1.0.0",
+  "title": "Select",
+  "category": "nexa-blocks",
+  "description": "Select field for Form Block",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "example": {},
+  "parent": [
+    "nexa/container",
+    "nexa/form"
+  ],
+  "usesContext": [
+    "nexa/showLabel"
+  ],
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

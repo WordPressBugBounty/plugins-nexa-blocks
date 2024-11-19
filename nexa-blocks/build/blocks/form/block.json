@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/form",
+  "version": "1.0.0",
+  "title": "Form",
+  "category": "nexa-blocks",
+  "description": "Contact form block with custom fields",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "example": {},
+  "textdomain": "nexa-blocks",
+  "providesContext": {
+    "nexa/showFormIcon": "showFormIcon",
+    "nexa/showLabel": "showLabel"
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "nexa-blocks-form-validation",
+    "file:./frontend.js"
+  ]
+}
