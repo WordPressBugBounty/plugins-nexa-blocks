@@ -62,6 +62,9 @@
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/form/render-form.php';
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/form/form-ajax.php';
 
+            // Entrance Animation
+            require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/animations/entrance.php';
+
         }
 
      }

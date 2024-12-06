@@ -39,7 +39,6 @@
         private function init() {
             add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ), 2 ); // Editor Assets.
             add_action( 'enqueue_block_assets', array( $this, 'enqueue_assets' ) ); // Frontend Assets + Editor Assets.
-
             add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_assets' ) ); // Admin Assets.
         }
 
@@ -88,6 +87,9 @@
             // animate css
             wp_enqueue_style( 'nexa-animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', [], NEXA_VERSION, 'all' );
             
+            // entrance animation
+            wp_enqueue_script( 'nexa-blocks-entrance-animation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/entrance-animation.js', [], NEXA_VERSION, true );
+
             // Enqueue Nexa Blocks Frontend Styles.
             if( is_admin() ) {
                 return;
@@ -110,7 +112,6 @@
                 // scripts
                 wp_enqueue_script( 'nx-swiper', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
                 wp_enqueue_script( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', [], NEXA_VERSION, true );
-            
             }
 
             // form validation script (pristine js)
@@ -127,10 +128,6 @@
          * @return void
          */
         public function enqueue_editor_assets() {
-
-            if( ! is_admin() ) {
-                return;
-            }
 
             // editor localize script
             wp_enqueue_script( 'nexa-blocks-editor-localize', trailingslashit( NEXA_URL_FILE ) . 'assets/js/editor-localize.js', [], NEXA_VERSION, true );

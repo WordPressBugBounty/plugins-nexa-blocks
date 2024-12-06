@@ -5,7 +5,7 @@
  * Author: NexaBlocks
  * Plugin URI: https://www.nexablocks.com/
  * Author URI: https://www.nexablocks.com
- * Version: 1.0.7
+ * Version: 1.0.8
  * Text Domain: nexa-blocks
  * Domain Path: /languages
  * License: GPLv2 or later

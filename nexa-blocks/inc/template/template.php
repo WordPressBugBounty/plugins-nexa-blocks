@@ -53,6 +53,24 @@
                 'callback' => array( $this, 'get_templates' ),
                 'permission_callback' => '__return_true'
             ) );
+
+            // favorites 
+            register_rest_route( 'nexa/v1', '/favorites', 
+                [
+                    'methods'  => ['GET', 'POST'],
+                    'callback' => [$this, 'handle_favorites_settings'],
+                    'permission_callback' => function () {
+                        return current_user_can('manage_options');
+                    },
+                ]
+            );
+
+            add_filter('rest_pre_serve_request', function ($value) {
+                header("Access-Control-Allow-Origin: *");
+                header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+                header("Access-Control-Allow-Headers: Content-Type, Authorization");
+                return $value;
+            });
         }
 
         /**
@@ -74,6 +92,75 @@
 
         }
 
+        // handle favorites
+        public function handle_favorites_settings($request) {
+            if ($request->get_method() === 'GET') {
+                return $this->get_favorites();
+            } else {
+                return $this->update_favorites($request);
+            }
+        }
+
+        /**
+         * Get Favorites
+         * 
+         * @return WP_REST_Response
+         */
+        public function get_favorites() {
+            return get_option('nexa_favorites', []);
+        }
+
+        /**
+         * Updates the favorites list.
+         *
+         * This method is responsible for updating the favorites list.
+         * It is a static method that can be called without instantiating the class.
+         *
+         * @param WP_REST_Request $request The request object.
+         * @return array The updated favorites list.
+         */
+        public function update_favorites($request) {
+            $nonce = $request->get_param('nexa_nonce');
+
+            if (! wp_verify_nonce($nonce, 'nexa_blocks_nonce')) {
+                return new WP_Error('invalid_request', __('Invalid request.', 'nexa-blocks'), array('status' => 400));
+            }
+
+            $fav_id = $request->get_param('fav_id') ? intval($request->get_param('fav_id')) : '';
+
+            // Fetch existing blocks
+            $fav_items = get_option('nexa_favorites', []);
+
+            // if fav_id is not empty then add to favorite list else remove from favorite list
+            if (!empty($fav_id)) {
+
+                // check if it is already in favorite list or not
+                $fav_exists = false;
+                foreach ($fav_items as $fav_item) {
+                    if ($fav_item === $fav_id) {
+                        $fav_exists = true;
+                        break;
+                    }
+                }
+
+                // if not exists then add to favorite list else remove from favorite list
+                if (!$fav_exists) {
+                    $fav_items[] = $fav_id;
+                } else {
+                    $key = array_search($fav_id, $fav_items);
+                    if ($key !== false) {
+                        unset($fav_items[$key]);
+                    }
+                }
+            } else {
+                return new WP_Error('invalid_request', __('Invalid favorite id provided.', 'nexa-blocks'), array('status' => 400));
+            }
+
+            // Update the option
+            update_option('nexa_favorites', $fav_items);
+
+            return rest_ensure_response($fav_items);
+        }
 
         /**
          * Templates Transient 
@@ -83,7 +170,7 @@
 
             if( false === $templates ) {
 
-                $templates = wp_remote_get( 'https://demo.nexablocks.com/wp-json/nexa/v1/templates' );
+                $templates = wp_remote_get( 'https://lib.nexablocks.com/templates/wp-json/nexa/v1/demos' );
 
                 if( is_wp_error( $templates ) ) {
                     return;
@@ -92,6 +179,7 @@
                 $templates = wp_remote_retrieve_body( $templates );
 
                 $templates = json_decode( $templates );
+
 
                 // set transient for 24 hours
                 set_transient( 'nexa_templates', $templates, 24 * HOUR_IN_SECONDS ); 

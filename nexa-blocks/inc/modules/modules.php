@@ -15,6 +15,6 @@ return apply_filters( 'nexa_modules', [
         'title'  => __('Custom CSS', 'nexa-blocks'),
         'is_pro' => true,
         'active' => true,
-    ],
+    ]
 ]); 
 
