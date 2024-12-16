@@ -45,7 +45,7 @@ if (!class_exists('NexaBlocks_Fonts_Loader')) {
          * Constructor
          */
         public function __construct() {
-            add_action('wp_enqueue_scripts', [$this, 'fonts_loader'], 10);
+            add_action('wp_enqueue_scripts', [$this, 'fonts_loader'], 0);
             add_action('admin_enqueue_scripts', [$this, 'fonts_loader'], 10);
             add_action('nexablocks_render_block', [$this, 'font_generator']);
         }
@@ -111,7 +111,8 @@ if (!class_exists('NexaBlocks_Fonts_Loader')) {
             foreach ($google_fonts as $font) {
                 $font_handle = 'nexablocks-font-' . sanitize_title($font);
                 $query_args = [
-                    'family' => $font . ':100,200,300,400,500,600,700,800,900'
+                    'family' => $font . ':100,200,300,400,500,600,700,800,900',
+                    'display' => 'swap',
                 ];
 
                 wp_register_style(

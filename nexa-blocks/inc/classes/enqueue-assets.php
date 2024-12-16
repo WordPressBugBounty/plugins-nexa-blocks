@@ -49,6 +49,16 @@
          * @return void
          */
         public function enqueue_assets() {
+
+            // swiper style + scripts
+            wp_register_style( 'nx-swiper-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-bundle.min.css', [], NEXA_VERSION, 'all' );
+            wp_register_style( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-gl.min.css', ['nx-swiper-style'], NEXA_VERSION, 'all' );
+
+            // scripts
+            wp_register_script( 'nx-swiper-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
+            wp_register_script( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', ['nx-swiper-script'], NEXA_VERSION, true );
+            
+            $nx_extensions = Nexa_Blocks_Helpers::nx_modules();
             
             // global locasize script
             wp_enqueue_script( 'nexa-blocks-global-localize', trailingslashit( NEXA_URL_FILE ) . 'assets/js/localize.js', [], NEXA_VERSION, true );
@@ -84,11 +94,11 @@
             // font awesome icons
             wp_enqueue_style( 'nexa-fontawesome-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/all.min.css', [], NEXA_VERSION, 'all' );
 
-            // animate css
-            wp_enqueue_style( 'nexa-animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', [], NEXA_VERSION, 'all' );
-            
             // entrance animation
-            wp_enqueue_script( 'nexa-blocks-entrance-animation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/entrance-animation.js', [], NEXA_VERSION, true );
+            if( isset( $nx_extensions['entrance-animation'] ) && $nx_extensions['entrance-animation']['active'] ) {
+                wp_enqueue_style( 'nexa-animate-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/animate.min.css', [], NEXA_VERSION, 'all' );
+                wp_enqueue_script( 'nexa-blocks-entrance-animation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/entrance-animation.js', [], NEXA_VERSION, true );
+            }           
 
             // Enqueue Nexa Blocks Frontend Styles.
             if( is_admin() ) {
@@ -99,25 +109,17 @@
             wp_enqueue_style( 'nexa-blocks-global-frontend-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/global-frontend.css', [], NEXA_VERSION, 'all' );
 
             // sharer script 
-            if( has_block( 'nexa/social-share' ) ){
-                wp_enqueue_script( 'nexa-blocks-sharer-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/sharer.min.js', [], NEXA_VERSION, true );
-            }
+            wp_register_script( 'nexa-blocks-sharer-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/sharer.min.js', [], NEXA_VERSION, true );
 
             // slider style + script 
-            if( has_block( 'nexa/slider' ) || has_block( 'nexa/dynamic-slider' ) ) {
-                // styles
-                wp_enqueue_style( 'nx-swiper', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-bundle.min.css', [], NEXA_VERSION, 'all' );
-                wp_enqueue_style( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-gl.min.css', [], NEXA_VERSION, 'all' );
+            wp_register_style( 'nx-swiper-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-bundle.min.css', [], NEXA_VERSION, 'all' );
+            wp_register_style( 'nx-swiper-gl-style', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-gl.min.css', ['nx-swiper-style'], NEXA_VERSION, 'all' );
 
-                // scripts
-                wp_enqueue_script( 'nx-swiper', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
-                wp_enqueue_script( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', [], NEXA_VERSION, true );
-            }
+            wp_register_script( 'nx-swiper-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
+            wp_register_script( 'nx-swiper-gl-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', ['nx-swiper-script'], NEXA_VERSION, true );
 
             // form validation script (pristine js)
-            if( has_block( 'nexa/form' ) ) {
-                wp_enqueue_script( 'nexa-blocks-form-validation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/pristine.min.js', [], NEXA_VERSION, true );
-            }
+            wp_register_script( 'nexa-blocks-form-validation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/pristine.min.js', [], NEXA_VERSION, true );
 
         }
 
@@ -163,7 +165,6 @@
             // modules 
             if (file_exists(trailingslashit(NEXA_PLUGIN_DIR) . '/build/modules/index.asset.php')) {
                 $modulesDependencies = require_once trailingslashit(NEXA_PLUGIN_DIR) . '/build/modules/index.asset.php';
-
                 wp_enqueue_script(
                     'nexa-blocks-modules-script',
                     trailingslashit(NEXA_URL_FILE) . 'build/modules/index.js',
@@ -176,7 +177,6 @@
             // global 
             if( file_exists( trailingslashit( NEXA_PLUGIN_DIR ) . '/build/global/index.asset.php' ) ) {
                 $globalDependencies = require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/build/global/index.asset.php';
-
                 wp_enqueue_script(
                     'nexa-blocks-global-script',
                     trailingslashit( NEXA_URL_FILE ) . 'build/global/index.js',
@@ -192,7 +192,6 @@
                     NEXA_VERSION,
                     false
                 );
-
             }
 
             // google map autocomplete 
@@ -203,14 +202,48 @@
                 wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=' . $gmap_api_key . '&libraries=places', [], NEXA_VERSION, true );
             }
 
-            // swiper style + scripts
-            wp_enqueue_style( 'nx-swiper', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-bundle.min.css', [], NEXA_VERSION, 'all' );
-            wp_enqueue_style( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/css/swiper-gl.min.css', [], NEXA_VERSION, 'all' );
+            // Extensions 
+            $nx_extensions = Nexa_Blocks_Helpers::nx_modules();
 
-            // scripts
-            wp_enqueue_script( 'nx-swiper', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
-            wp_enqueue_script( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', [], NEXA_VERSION, true );
+            if( isset( $nx_extensions['copy-paste'] ) && $nx_extensions['copy-paste']['active'] ) {
+                if( file_exists( trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/copy-paste/index.asset.php' ) ) {
+                    $cpDependencies = require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/copy-paste/index.asset.php';
+                    wp_enqueue_script(
+                        'nexa-blocks-copy-paste-script',
+                        trailingslashit( NEXA_URL_FILE ) . 'build/extensions/copy-paste/index.js',
+                        $cpDependencies['dependencies'],
+                        $cpDependencies['version'],
+                        false
+                    );
+                }
+            }
 
+            if( isset( $nx_extensions['responsive-visibility'] ) && $nx_extensions['responsive-visibility']['active'] ) {
+                if( file_exists( trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/responsive-visibility/index.asset.php' ) ) {
+                    $rvDependencies = require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/responsive-visibility/index.asset.php';
+                    wp_enqueue_script(
+                        'nexa-blocks-responsive-visibility-script',
+                        trailingslashit( NEXA_URL_FILE ) . 'build/extensions/responsive-visibility/index.js',
+                        $rvDependencies['dependencies'],
+                        $rvDependencies['version'],
+                        false
+                    );
+                }
+            }
+
+            if( isset( $nx_extensions['entrance-animation'] ) && $nx_extensions['entrance-animation']['active'] ) {
+                if( file_exists( trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/entrance-animation/index.asset.php' ) ) {
+                    $eaDependencies = require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/build/extensions/entrance-animation/index.asset.php';
+                    wp_enqueue_script(
+                        'nexa-blocks-entrance-animation-script',
+                        trailingslashit( NEXA_URL_FILE ) . 'build/extensions/entrance-animation/index.js',
+                        $eaDependencies['dependencies'],
+                        $eaDependencies['version'],
+                        false
+                    );
+                }
+            }
+        
         }
 
         /**

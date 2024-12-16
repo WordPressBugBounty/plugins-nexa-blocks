@@ -5,7 +5,7 @@
  * Author: NexaBlocks
  * Plugin URI: https://www.nexablocks.com/
  * Author URI: https://www.nexablocks.com
- * Version: 1.0.8
+ * Version: 1.0.9
  * Text Domain: nexa-blocks
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -55,7 +55,7 @@ if ( ! class_exists( 'NexaBlocks ' ) ) {
 		 */
 		public function define_constants() {
 			if( ! defined( 'NEXA_VERSION' ) ) {
-				define( 'NEXA_VERSION', '1.0.7' );
+				define( 'NEXA_VERSION', '1.0.9' );
 			}
 			if( ! defined( 'NEXA__FILE__' ) ) {
 				define( 'NEXA__FILE__', __FILE__ );

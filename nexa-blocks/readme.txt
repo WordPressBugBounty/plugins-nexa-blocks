@@ -3,7 +3,7 @@ Contributors: NexaBlock, NexaBlocks
 Tags: nexablocks, blocks, gutenberg blocks, custom block, gutenberg
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -96,6 +96,10 @@ NexaBlocks should be compatible with other Gutenberg plugins, some popular plugi
 
 
 == Changelog ==
+
+= 1.0.9 =
+* New modules added.
+* improvement update
 
 = 1.0.8 =
 * Template Library optmized.

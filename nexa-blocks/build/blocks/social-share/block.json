@@ -19,5 +19,9 @@
   "textdomain": "nexa-blocks",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./frontend.js",
+    "nexa-blocks-sharer-script"
+  ]
 }

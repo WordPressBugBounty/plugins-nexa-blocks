@@ -53,7 +53,7 @@ if( ! class_exists( 'NexaBlocks_SupportSVG' ) ) {
             }
 
             // Sanitize SVG content
-            $svg_content = wp_remote_get($file);
+            $svg_content = wp_remote_get($file, ['timeout' => 10]);
             $sanitized_content = $this->sanitize_svg_content($svg_content);
             if ($sanitized_content !== $svg_content) {
                 $data['error'] = 'SVG file contains disallowed content.';

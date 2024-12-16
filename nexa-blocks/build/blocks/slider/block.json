@@ -27,18 +27,18 @@
   "textdomain": "nexa-blocks",
   "editorScript": [
     "file:./index.js",
-    "nx-swiper"
+    "nx-swiper-gl"
   ],
   "editorStyle": [
     "file:./index.css",
-    "nx-swiper"
+    "nx-swiper-gl"
   ],
   "style": [
     "file:./style-index.css",
-    "nx-swiper"
+    "nx-swiper-gl-style"
   ],
   "viewScript": [
     "file:./frontend.js",
-    "nx-swiper"
+    "nx-swiper-gl-script"
   ]
 }

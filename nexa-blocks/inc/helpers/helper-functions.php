@@ -166,6 +166,31 @@ if( ! class_exists( 'Nexa_Blocks_Helpers' ) ) {
             return require trailingslashit(NEXA_PLUGIN_DIR) . 'inc/blocks-api/apis.php';
         }
 
+        /**
+         * Nexa Modules Active
+         * 
+         * @since 1.0.7
+         */
+        public static function nx_modules() {
+            $nx_modules = get_option('nexa_modules', []);
+
+            if (!is_array($nx_modules) || empty($nx_modules)) {
+                return [];
+            }
+
+            $modules = array_reduce($nx_modules, function($carry, $module) {
+                $carry[$module['name']] = [
+                    'active' => $module['active'],
+                    'is_pro' => $module['is_pro'],
+                ];
+
+                return $carry;
+            
+            }, []);
+
+            return $modules;
+        }
+
     }
 
 }

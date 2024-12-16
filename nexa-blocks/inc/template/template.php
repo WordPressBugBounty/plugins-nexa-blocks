@@ -170,7 +170,7 @@
 
             if( false === $templates ) {
 
-                $templates = wp_remote_get( 'https://lib.nexablocks.com/templates/wp-json/nexa/v1/demos' );
+                $templates = wp_remote_get( 'https://lib.nexablocks.com/templates/wp-json/nexa/v1/demos', array( 'timeout' => 120 ) );
 
                 if( is_wp_error( $templates ) ) {
                     return;
@@ -193,14 +193,21 @@
          * Enqueue Assets
          */
         public function enqueue_assets() {
-            $d_file = trailingslashit( NEXA_PLUGIN_DIR ) . 'build/templates/index.asset.php';
+
+            $nx_modules = Nexa_Blocks_Helpers::nx_modules();
+
+            if( ! isset( $nx_modules['template-library'] ) || ! $nx_modules['template-library']['active'] ) {
+                return;
+            }
+
+            $d_file = trailingslashit( NEXA_PLUGIN_DIR ) . 'build/extensions/templates/index.asset.php';
 
             if( file_exists( $d_file ) ) {
                 $d_asset = require_once $d_file;
 
                 wp_enqueue_script(
                     'nexa-templates-script',
-                    trailingslashit( NEXA_URL_FILE ) . 'build/templates/index.js',
+                    trailingslashit( NEXA_URL_FILE ) . 'build/extensions/templates/index.js',
                     $d_asset['dependencies'],
                     $d_asset['version'],
                     false
@@ -208,7 +215,7 @@
 
                 wp_enqueue_style(
                     'nexa-templates-style',
-                    trailingslashit( NEXA_URL_FILE ) . 'build/templates/index.css',
+                    trailingslashit( NEXA_URL_FILE ) . 'build/extensions/templates/index.css',
                     [],
                     $d_asset['version'],
                     'all'
@@ -232,7 +239,7 @@
                 wp_send_json_error( 'Invalid Data' );
             }
 
-            $response = wp_remote_get( $file_path );
+            $response = wp_remote_get( $file_path, array( 'timeout' => 120 ) );
 
             if( is_wp_error( $response ) ) {
                 wp_send_json_error( 'Invalid Data' );
@@ -272,7 +279,7 @@
 
             if (!empty($all_img_srcs)) {
                 foreach ($all_img_srcs as $img_src) {
-                    $response = wp_remote_get($img_src);
+                    $response = wp_remote_get($img_src, ['timeout' => 10]);
                     if (!is_wp_error($response)) {
                         $body = wp_remote_retrieve_body($response);
                         $filename = basename($img_src);
