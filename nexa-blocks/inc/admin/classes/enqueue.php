@@ -31,7 +31,8 @@
          * @return void
          */
         public function enqueue_assets( $screen ) {
-            if( 'toplevel_page_nexa-blocks' === $screen ) {
+
+            if( 'toplevel_page_nexa-blocks' === $screen || 'nexa-blocks_page_nexapro-license' === $screen ) {
                 
                 $blocks = Nexa_Blocks_Helpers::get_nexa_blocks();
 
@@ -39,7 +40,11 @@
 
                 if( file_exists( $a_dep ) ) {
                     $a_dep = require_once $a_dep;
-                    wp_enqueue_script( 'nexa-dashboard', trailingslashit( NEXA_URL_FILE ) . 'build/admin/index.js', $a_dep['dependencies'], $a_dep['version'], true );
+
+                    if( 'toplevel_page_nexa-blocks' === $screen ) {
+                        wp_enqueue_script( 'nexa-dashboard', trailingslashit( NEXA_URL_FILE ) . 'build/admin/index.js', $a_dep['dependencies'], $a_dep['version'], true );
+                    }
+
                     wp_enqueue_style( 'nexa-dashboard', trailingslashit( NEXA_URL_FILE ) . 'build/admin/style-index.css', array(), $a_dep['version'] );
                 }
 
