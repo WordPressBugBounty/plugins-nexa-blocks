@@ -1,5 +1,5 @@
 === Nexa Blocks ===
-Contributors: NexaBlock, NexaBlocks
+Contributors: NexaBlock, NexaBlocks, wpdive
 Tags: nexablocks, blocks, gutenberg blocks, custom block, gutenberg
 Requires at least: 6.0
 Tested up to: 6.7
