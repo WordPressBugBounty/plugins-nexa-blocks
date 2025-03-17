@@ -170,7 +170,7 @@
 
             if( false === $templates ) {
 
-                $templates = wp_remote_get( 'https://lib.nexablocks.com/templates/wp-json/nexa/v1/demos', array( 'timeout' => 120 ) );
+                $templates = wp_remote_get( 'https://nexa.wpdive.com/templates/wp-json/nexa/v1/demos', array( 'timeout' => 120 ) );
 
                 if( is_wp_error( $templates ) ) {
                     return;
@@ -313,7 +313,7 @@
             // Process your JSON data here
             wp_send_json_success([
                 'status'   => 'success',
-                'message'  => __('Pattern imported successfully!', 'zoloblocks'),
+                'message'  => __('Pattern imported successfully!', 'nexa-blocks'),
                 'content'  => $content,
                 'img_srcs' => $img_srcs,
                 'bg_srcs'  => $bg_srcs,

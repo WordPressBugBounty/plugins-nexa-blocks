@@ -3,13 +3,13 @@
  * Plugin Name: Nexa Blocks
  * Description: The Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster.
  * Author: NexaBlocks
- * Plugin URI: https://www.nexablocks.com/
- * Author URI: https://www.nexablocks.com
- * Version: 1.0.9
+ * Plugin URI: https://wpdive.com/plugins/nexa-blocks
+ * Author URI: https://wpdive.com
+ * Version: 1.1.0
  * Text Domain: nexa-blocks
  * Domain Path: /languages
- * License: GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License: GPLv3 or later
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  *
  * @package NexaBlocks
  */

@@ -65,6 +65,9 @@
             // Entrance Animation
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/animations/entrance.php';
 
+            // blocks render 
+            require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/blocks/blocks_render.php';
+
         }
 
      }

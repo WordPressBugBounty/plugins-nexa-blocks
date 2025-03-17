@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/navigation-item",
+  "version": "1.0.0",
+  "title": "Navigation Item",
+  "category": "nexa-blocks",
+  "description": "Child block for Navigation block",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "providesContext": {
+    "nxa/preset": "preset"
+  },
+  "parent": [
+    "nexa/navigation"
+  ],
+  "example": {},
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

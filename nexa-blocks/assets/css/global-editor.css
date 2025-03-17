@@ -20,4 +20,5 @@
 /* Word Wrap */
 .nx-block {
     word-wrap: break-word;
+    box-sizing: border-box;
 }

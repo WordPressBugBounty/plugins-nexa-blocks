@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/progress-bar",
+  "version": "1.0.0",
+  "title": "Progress Bar",
+  "category": "nexa-blocks",
+  "description": "Single progress bar.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "usesContext": [],
+  "example": {},
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js",
+    "nx-waypoint"
+  ]
+}

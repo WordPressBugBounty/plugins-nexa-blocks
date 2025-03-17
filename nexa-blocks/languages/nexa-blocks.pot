@@ -25,7 +25,7 @@ msgstr ""
 
 #. Plugin URI of the plugin
 #: nexa-blocks.php
-msgid "https://www.nexablocks.com/"
+msgid "https://www.wpdive.com/plugins/nexa-blocks//"
 msgstr ""
 
 #. Description of the plugin
@@ -40,7 +40,7 @@ msgstr ""
 
 #. Author URI of the plugin
 #: nexa-blocks.php
-msgid "https://www.nexablocks.com"
+msgid "https://www.wpdive.com/plugins/nexa-blocks/"
 msgstr ""
 
 #: inc/admin/classes/dashboard.php:42

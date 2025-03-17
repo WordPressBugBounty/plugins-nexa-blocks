@@ -58,6 +58,10 @@
             wp_register_script( 'nx-swiper-script', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-bundle.min.js', [], NEXA_VERSION, true );
             wp_register_script( 'nx-swiper-gl', trailingslashit( NEXA_URL_FILE ) . 'assets/js/swiper-gl.min.js', ['nx-swiper-script'], NEXA_VERSION, true );
             
+           
+            // waypoint 
+            wp_register_script( 'nx-waypoint', trailingslashit( NEXA_URL_FILE ) . 'assets/js/waypoints.min.js', [], NEXA_VERSION, true );
+
             $nx_extensions = Nexa_Blocks_Helpers::nx_modules();
             
             // global locasize script
@@ -69,6 +73,7 @@
             // Set script translations
             $locale = determine_locale();
             $locale_path = NEXA_PLUGIN_DIR . 'languages/' . substr($locale, 0, 2);
+            
             wp_set_script_translations( 'nexa-blocks-global-localize', 'nexa-blocks', $locale_path );
 
             wp_localize_script(

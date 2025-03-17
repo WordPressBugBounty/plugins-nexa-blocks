@@ -1182,12 +1182,12 @@ msgstr ""
 
 #. Author URI of the plugin
 #: nexa-blocks.php
-msgid "https://www.nexablocks.com"
+msgid "https://www.wpdive.com/plugins/nexa-blocks/"
 msgstr ""
 
 #. Plugin URI of the plugin
 #: nexa-blocks.php
-msgid "https://www.nexablocks.com/"
+msgid "https://www.wpdive.com/plugins/nexa-blocks//"
 msgstr ""
 
 #: build/blocks/google-map/index.js:1

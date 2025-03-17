@@ -14,43 +14,43 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'container',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/container'
+        'demo'   => 'https://nexa.wpdive.com/container'
     ],
     [
         'name'   => 'advanced-heading',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/advanced-heading/'
+        'demo'   => 'https://nexa.wpdive.com/advanced-heading/'
     ],
     [
         'name'   => 'button',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/button/'
+        'demo'   => 'https://nexa.wpdive.com/button/'
     ],
     [
         'name'   => 'icon-box',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/icon-box/'
+        'demo'   => 'https://nexa.wpdive.com/icon-box/'
     ],
     [
         'name'   => 'social-icons',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/social-icons/'
+        'demo'   => 'https://nexa.wpdive.com/social-icons/'
     ],
     [
         'name'   => 'social-share',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/social-share/'
+        'demo'   => 'https://nexa.wpdive.com/social-share/'
     ],
     [
         'name'   => 'google-map',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/google-map/'
+        'demo'   => 'https://nexa.wpdive.com/google-map/'
     ],
     [
         'name'     => 'accordion-item',
@@ -62,7 +62,7 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'accordion',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/accordion/'
+        'demo'   => 'https://nexa.wpdive.com/accordion/'
     ],
     [
         'name'     => 'image-accordion-item',
@@ -74,7 +74,7 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'image-accordion',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/image-accordion/'
+        'demo'   => 'https://nexa.wpdive.com/image-accordion/'
     ],
     [
         'name'     => 'slide-item',
@@ -86,19 +86,19 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'slider',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/slider/'
+        'demo'   => 'https://nexa.wpdive.com/slider/'
     ],
     [
         'name'   => 'flip-box',
         'is_pro' => true,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/flip-box/',
+        'demo'   => 'https://nexa.wpdive.com/flip-box/',
     ],
     [
         'name'   => 'dynamic-slider',
         'is_pro' => true,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/dynamic-slider/',
+        'demo'   => 'https://nexa.wpdive.com/dynamic-slider/',
     ],
     [
         'name'     => 'tab',
@@ -111,46 +111,88 @@ return apply_filters( 'nexa_blocks', [
         'is_pro'      => false,
         'is_freemium' => true,
         'active'      => true,
-        'demo'        => 'https://lib.nexablocks.com/tabs/',
+        'demo'        => 'https://nexa.wpdive.com/tabs/',
     ],
     [
         'name'   => 'form',
         'is_pro' => false,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/tabs/',
+        'demo'   => 'https://nexa.wpdive.com/form/',
     ],
     [
-        'name'   => 'text',
+        'name'     => 'text',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'email',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'message',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'select',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'advanced-slide-item',
+        'is_pro'   => true,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'   => 'advanced-slider',
+        'is_pro' => true,
+        'active' => true,
+        'demo'   => 'https://nexa.wpdive.com/tabs/',
+    ],
+    [
+        'name'   => 'navigation',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://nexa.wpdive.com/navigation/',
+    ],
+    [
+        'name'     => 'navigation-item',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'navigation-submenu',
+        'is_pro'   => false,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'     => 'megamenu',
+        'is_pro'   => true,
+        'is_child' => true,
+        'active'   => true,
+    ],
+    [
+        'name'   => 'stylish-list',
+        'is_pro' => false,
+        'active' => true,
+    ],
+    [
+        'name'   => 'list',
         'is_pro' => false,
         'is_child' => true,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/tabs/',
     ],
     [
-        'name'   => 'email',
+        'name'   => 'progress-bar',
         'is_pro' => false,
-        'is_child' => true,
         'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/tabs/',
-    ],
-    [
-        'name'   => 'message',
-        'is_pro' => false,
-        'is_child' => true,
-        'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/tabs/',
-    ],
-    [
-        'name'   => 'select',
-        'is_pro' => false,
-        'is_child' => true,
-        'active' => true,
-        'demo'   => 'https://lib.nexablocks.com/tabs/',
-    ],
-    [
-        'name'        => 'advanced-slider',
-        'is_upcoming' => true,
-        'active'      => true,
-        'demo'        => 'https://lib.nexablocks.com/tabs/',
-    ],
+    ]
 ]); 

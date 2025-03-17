@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/stylish-list",
+  "version": "1.0.0",
+  "title": "Stylish List",
+  "category": "nexa-blocks",
+  "description": "Displays a list of items in a stylish manner.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "providesContext": {
+    "nx/icon": "icon",
+    "nx/showIcon": "showIcon",
+    "nx/showTitle": "showTitle",
+    "nx/titleTag": "titleTag"
+  },
+  "example": {},
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

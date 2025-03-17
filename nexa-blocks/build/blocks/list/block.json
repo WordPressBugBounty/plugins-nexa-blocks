@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/list",
+  "version": "1.0.0",
+  "title": "List",
+  "category": "nexa-blocks",
+  "description": "Single list item.",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "usesContext": [
+    "nx/icon",
+    "nx/showIcon",
+    "nx/showTitle",
+    "nx/titleTag"
+  ],
+  "example": {},
+  "parent": [
+    "nexa/stylish-list"
+  ],
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

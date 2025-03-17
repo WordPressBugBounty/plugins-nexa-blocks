@@ -1,17 +1,24 @@
-=== Nexa Blocks ===
+=== Nexa Blocks - Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE ===
 Contributors: NexaBlock, NexaBlocks, wpdive
-Tags: nexablocks, blocks, gutenberg blocks, custom block, gutenberg
+Tags: nexablocks, blocks, gutenberg blocks, custom block, gutenberg, page builder
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 Requires PHP: 7.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-NexaBlocks is Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster.
+NexaBlocks is Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster .
 
 == Description ==
-NexaBlocks is Gutenberg Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster. You don't need to have any coding knowledge to build eye-catching websites.
+NexaBlocks is Gutenberg Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster. You don't need to have any coding knowledge to build eye-catching websites.  It's for a better page-building experience without the need for traditional page builders like Elementor and Divi.
+
+## Quick Links 🔗
+
+- Do you want to see Nexa blocks in action before installing? [SEE NEXA BLOCKS DEMO](https://nexa.wpdive.com/?utm_source=wpadmin&utm_medium=readme&utm_campaign=nexa-blocks)
+- New to the Gutenberg Blocks Ready Templates? Checkout our [SEE NEXA TEMPLATE LIBRARY](https://nexa.wpdive.com/templates/?utm_source=wpadmin&utm_medium=readme&utm_campaign=nexa-blocks)
+- Need any help with setup? Checkout our [DOCUMENTATION](https://nexa.wpdive.com/docs)
+- Interested in Nexa Pro? Here are more details about [NEXA PRO](https://wpdive.com/plugins/nexa-blocks/?utm_source=wpadmin&utm_medium=readme&utm_campaign=nexa-blocks)
 
 ##  Key Features
 
@@ -34,27 +41,27 @@ NexaBlocks is Gutenberg Blocks Library extends the Gutenberg functionality with 
 
 ##  Nexa Free Blocks: Effortless Page and Post Design in Gutenberg
 
-**✅ <a href="https://lib.nexablocks.com/slider/" target="_blank" rel="">Slider</a>:** Stunning, awesome slideshows effortlessly. Highlight key content with beautiful transitions and customizable styles to captivate your audience.
+**✅ <a href="https://nexa.wpdive.com/slider/" target="_blank" rel="">Slider</a>:** Stunning, awesome slideshows effortlessly. Highlight key content with beautiful transitions and customizable styles to captivate your audience.
 
-**✅ <a href="https://lib.nexablocks.com/tabs/" target="_blank" rel="">Advanced Tabs</a>:** Create awesome content layouts.
+**✅ <a href="https://nexa.wpdive.com/tabs/" target="_blank" rel="">Advanced Tabs</a>:** Create awesome content layouts.
 
-**✅ <a href="https://lib.nexablocks.com/container/" target="_blank" rel="">Container</a>:** Create structured content layouts.
+**✅ <a href="https://nexa.wpdive.com/container/" target="_blank" rel="">Container</a>:** Create structured content layouts.
 
-**✅ <a href="https://lib.nexablocks.com/advanced-heading/" target="_blank" rel="">Advanced Heading</a>:** Add customizable text headings.
+**✅ <a href="https://nexa.wpdive.com/advanced-heading/" target="_blank" rel="">Advanced Heading</a>:** Add customizable text headings.
 
-**✅ <a href="https://lib.nexablocks.com/icon-box/" target="_blank" rel="">Icon Box</a>:** Insert icons with text and style options.
+**✅ <a href="https://nexa.wpdive.com/icon-box/" target="_blank" rel="">Icon Box</a>:** Insert icons with text and style options.
 
-**✅ <a href="https://lib.nexablocks.com/social-icons/" target="_blank" rel="">Social Icons</a>:** Include social media icons and links.
+**✅ <a href="https://nexa.wpdive.com/social-icons/" target="_blank" rel="">Social Icons</a>:** Include social media icons and links.
 
-**✅ <a href="https://lib.nexablocks.com/button/" target="_blank" rel="">Button</a>:** Insert customizable buttons for call-to-action purposes.
+**✅ <a href="https://nexa.wpdive.com/button/" target="_blank" rel="">Button</a>:** Insert customizable buttons for call-to-action purposes.
 
-**✅ <a href="https://lib.nexablocks.com/social-share/" target="_blank" rel="">Social Share</a>:** Enable easy content sharing on social media.
+**✅ <a href="https://nexa.wpdive.com/social-share/" target="_blank" rel="">Social Share</a>:** Enable easy content sharing on social media.
 
-**✅ <a href="https://lib.nexablocks.com/accordion/" target="_blank" rel="">Advanced Accordion</a>:** Create collapsible content sections on the page and post.
+**✅ <a href="https://nexa.wpdive.com/accordion/" target="_blank" rel="">Advanced Accordion</a>:** Create collapsible content sections on the page and post.
 
-**✅ <a href="https://lib.nexablocks.com/image-accordion/" target="_blank" rel="">Image Accordion</a>:** Create collapsible content sections on the page and post.
+**✅ <a href="https://nexa.wpdive.com/image-accordion/" target="_blank" rel="">Image Accordion</a>:** Create collapsible content sections on the page and post.
 
-**✅ <a href="https://lib.nexablocks.com/google-map/" target="_blank" rel="">Google Maps</a>:** Display a location you want to share to your website visitor.
+**✅ <a href="https://nexa.wpdive.com/google-map/" target="_blank" rel="">Google Maps</a>:** Display a location you want to share to your website visitor.
 
 
 ##  **Upgrade To NexaBlocks Pro And Experience Page Builder Features In Gutenberg Block Editor**
@@ -96,6 +103,11 @@ NexaBlocks should be compatible with other Gutenberg plugins, some popular plugi
 
 
 == Changelog ==
+
+= 1.1.0 =
+* New modules added.
+* New blocks added.
+* improvement update
 
 = 1.0.9 =
 * New modules added.
