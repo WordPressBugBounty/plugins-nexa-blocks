@@ -2,8 +2,8 @@
 Contributors: NexaBlock, NexaBlocks, wpdive
 Tags: nexablocks, blocks, gutenberg blocks, custom block, gutenberg, page builder
 Requires at least: 6.0
-Tested up to: 6.7
-Stable tag: 1.1.0
+Tested up to: 6.8
+Stable tag: 1.1.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -103,6 +103,8 @@ NexaBlocks should be compatible with other Gutenberg plugins, some popular plugi
 
 
 == Changelog ==
+= 1.1.1 = 
+* Security issue related to google map block is fixed.
 
 = 1.1.0 =
 * New modules added.

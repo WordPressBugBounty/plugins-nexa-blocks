@@ -3,9 +3,9 @@
  * Plugin Name: Nexa Blocks
  * Description: The Blocks Library extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster.
  * Author: NexaBlocks
- * Plugin URI: https://wpdive.com/plugins/nexa-blocks
- * Author URI: https://wpdive.com
- * Version: 1.1.0
+ * Plugin URI: https://www.nexablocks.com/
+ * Author URI: https://www.nexablocks.com
+ * Version: 1.1.1
  * Text Domain: nexa-blocks
  * Domain Path: /languages
  * License: GPLv3 or later
@@ -13,6 +13,19 @@
  *
  * @package NexaBlocks
  */
+
+// IMPORTANT FIX: Prevent any processing on sitemap requests
+if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+	$request_uri = $_SERVER['REQUEST_URI'];
+	
+	if ( strpos( $request_uri, 'sitemap' ) !== false || 
+	     strpos( $request_uri, '.xml' ) !== false ||
+	     strpos( $request_uri, 'xsl' ) !== false ||
+	     ( isset( $_GET['sitemap'] ) ) ) {
+		// Don't load Nexa Blocks on sitemap pages
+		return;
+	}
+}
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -43,7 +56,6 @@ if ( ! class_exists( 'NexaBlocks ' ) ) {
 		 */
 		private function __construct() {
 			$this->define_constants();
-			$this->init();
 			$this->includes();
 		}
 
@@ -55,7 +67,7 @@ if ( ! class_exists( 'NexaBlocks ' ) ) {
 		 */
 		public function define_constants() {
 			if( ! defined( 'NEXA_VERSION' ) ) {
-				define( 'NEXA_VERSION', '1.0.9' );
+				define( 'NEXA_VERSION', '1.1.1' );
 			}
 			if( ! defined( 'NEXA__FILE__' ) ) {
 				define( 'NEXA__FILE__', __FILE__ );
@@ -69,26 +81,6 @@ if ( ! class_exists( 'NexaBlocks ' ) ) {
 			if( ! defined( 'NEXA_URL' ) ) {
 				define( 'NEXA_URL', plugins_url( '/', NEXA_PLUGIN_DIR ) );
 			}
-		}
-
-		/**
-		 * Nexa Blocks Init
-		 * 
-		 * @since 1.0.0
-		 * @return void
-		 */
-		public function init() {
-			add_action( 'init', array( $this, 'load_textdomain' ) );
-		}
-
-		/**
-		 * Nexa Blocks Load Text Domain
-		 * 
-		 * @since 1.0.0
-		 * @return void
-		 */
-		public function load_textdomain() {
-			load_plugin_textdomain( 'nexa-blocks', false, basename( NEXA_PLUGIN_DIR ) . '/languages' );
 		}
 
 		/**

@@ -54,6 +54,12 @@ if (!class_exists('Nexa_Blocks_API')) {
                 'callback'            => [$this, 'handle_apis_request'],
                 'permission_callback' => [$this, 'get_permissions']
             ]);
+
+            register_rest_route('nexa/v1', '/posts', [
+                'methods'             => ['GET'],
+                'callback'            => [$this, 'handle_posts_request'],
+                'permission_callback' => '__return_true' // Allow public access to this endpoint
+            ]);
         }
 
         /**
@@ -93,6 +99,60 @@ if (!class_exists('Nexa_Blocks_API')) {
             } elseif ($request->get_method() === 'POST') {
                 return $this->update_api_status($request);
             } 
+        }
+
+        /**
+         * Handle Posts Request
+         * 
+         * @since 1.0.0
+         */
+        public function handle_posts_request($request) {
+            if ($request->get_method() === 'GET') {
+                return $this->get_posts();
+            }
+        }
+        /**
+         * Get Posts
+         *
+         * @since 1.0.0
+         */
+        public function get_posts() {
+            
+            $args = [
+                'post_type'      => 'post',
+                'posts_per_page' => -1,
+                'post_status'    => 'publish',
+            ];
+
+            $posts = get_posts($args);
+
+            if (empty($posts)) {
+                return new WP_Error('no_posts', __('No posts found.', 'nexa-blocks'), array('status' => 404));
+            }
+
+            // Prepare the response
+            $posts = array_map(function($post) {
+                return [
+                    'id'      => $post->ID,
+                    'title'   => $post->post_title,
+                    'link'    => get_permalink($post->ID),
+                    'date'    => $post->post_date,
+                    'image'   => get_the_post_thumbnail_url($post->ID, 'full'),
+                    'excerpt' => apply_filters('the_excerpt', $post->post_excerpt),
+                    'content' => apply_filters('the_content', $post->post_content),
+                    'author'  => [
+                        'id'   => $post->post_author,
+                        'name' => get_the_author_meta('display_name', $post->post_author),
+                        'link' => get_author_posts_url($post->post_author),
+                    ],
+                    'categories' => wp_get_post_categories($post->ID, ['fields' => 'names']),
+                    'tags'       => wp_get_post_tags($post->ID, ['fields' => 'names']),
+                    'comments'   => get_comments_number($post->ID),
+                ];
+            }, $posts);
+
+
+            return rest_ensure_response($posts);
         }
 
         /**

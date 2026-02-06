@@ -183,6 +183,7 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'stylish-list',
         'is_pro' => false,
         'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/stylish-list/',
     ],
     [
         'name'   => 'list',
@@ -194,5 +195,138 @@ return apply_filters( 'nexa_blocks', [
         'name'   => 'progress-bar',
         'is_pro' => false,
         'active' => true,
-    ]
+        'demo'   => 'https://lib.nexablocks.com/progress-bar/',
+    ],
+    [
+        'name'   => 'post-list',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-list/',
+    ],
+    [
+        'name' => 'advanced-image',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/advanced-image/',
+    ],
+    [
+        'name' => 'image-box',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/image-box/',
+    ],
+    [
+        'name' => 'counter',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/counter/',
+    ],
+    [
+        'name' => 'count-down',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/count-down/',
+    ],
+    [
+        'name' => 'faqs',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/faqs/',
+    ],
+    [
+        'name' => 'image-compare',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/image-compare/',
+    ],
+    [
+        'name' => 'pie-chart',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/pie-chart/',
+    ],
+    [
+        'name' => 'image-gallery',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/image-gallery/',
+    ],
+    [
+        'name' => 'video-gallery',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/video-gallery/',
+    ],
+    [
+        'name'     => 'testimonial-item',
+        'is_pro'   => false,
+        'active'   => true,
+        'is_child' => true,
+    ],
+    [
+        'name'   => 'testimonial',
+        'is_pro' => false,
+        'active' => true,
+         'demo'   => 'https://lib.nexablocks.com/testimonial/',
+    ],
+    [
+        'name'   => 'timeline',
+        'is_pro' => false,
+        'active' => true,
+         'demo'   => 'https://lib.nexablocks.com/timeline/'
+    ],
+    [
+        'name' => 'timeline-item',
+        'is_pro' => false,
+        'active' => true,
+       'is_child' => true
+    ],
+     [
+        'name'   => 'post-title',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-title/'
+    ],
+     [
+        'name'   => 'post-featured-image',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-title/'
+    ],
+     [
+        'name'   => 'post-meta',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-meta/'
+    ],
+     [
+        'name'   => 'post-content',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-content/'
+    ],
+     [
+        'name'   => 'post-comments',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/post-comments-form/'
+    ],
+     [
+        'name'   => 'breadcrumbs',
+        'is_pro' => false,
+        'active' => true,
+        'demo'   => 'https://lib.nexablocks.com/breadcrumbs/'
+    ],
+    [
+        'name'   => 'fancy-list',
+        'is_pro' => false,
+        'active' => true,
+         'demo'   => 'https://lib.nexablocks.com/fancy-list/'
+    ],
+    [
+        'name' => 'fancy-list-item',
+        'is_pro' => false,
+        'active' => true,
+       'is_child' => true
+    ],
 ]); 

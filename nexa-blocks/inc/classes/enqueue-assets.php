@@ -126,6 +126,9 @@
             // form validation script (pristine js)
             wp_register_script( 'nexa-blocks-form-validation', trailingslashit( NEXA_URL_FILE ) . 'assets/js/pristine.min.js', [], NEXA_VERSION, true );
 
+            // fs lightbox script
+            wp_register_script( 'fslightbox', trailingslashit( NEXA_URL_FILE ) . 'assets/js/fslightbox.js', [], NEXA_VERSION, true);
+
         }
 
         /**

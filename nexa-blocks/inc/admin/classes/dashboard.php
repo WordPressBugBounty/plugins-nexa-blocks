@@ -34,7 +34,9 @@ if( ! class_exists( 'NexaBlocks_Dashboard' ) ) {
          */
         
         public function register_settings() {
-            register_setting( 'nexa_blocks_settings', 'nexa_blocks_settings' );
+            register_setting( 'nexa_blocks_settings', 'nexa_blocks_settings', [
+                'sanitize_callback' => [ $this, 'sanitize_settings' ],
+            ] );
 
             // Settings Section
             add_settings_section(
@@ -54,6 +56,22 @@ if( ! class_exists( 'NexaBlocks_Dashboard' ) ) {
             );
 
         }
+
+        /**
+         * Sanitize Settings
+         * 
+         * @since 1.0.0
+         * @param array $input Input settings.
+         * @return array Sanitized settings.
+         */
+        public function sanitize_settings( $input ) {
+            $sanitized = array();
+            if ( isset( $input['gmap_api_key'] ) ) {
+                $sanitized['gmap_api_key'] = sanitize_text_field( $input['gmap_api_key'] );
+            }
+            return $sanitized;
+        }
+
         /**
          * Settings Section Callback
          * 

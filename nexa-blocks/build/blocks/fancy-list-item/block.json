@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "nexa/fancy-list-item",
+  "version": "1.0.0",
+  "title": "Fancy List Item",
+  "category": "nexa-blocks",
+  "description": "Act as a slide item for the slider block.",
+  "parent": [
+    "nexa/fancy-list"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "className": false,
+    "customClassName": false
+  },
+  "usesContext": [
+    "nexa/showIcon",
+    "nexa/showRating",
+    "nexa/showDesc",
+    "nexa/showImg",
+    "nexa/showAuthorName",
+    "nexa/showProfession",
+    "nexa/icon",
+    "nexa/iconSource"
+  ],
+  "example": {},
+  "textdomain": "nexa-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -44,7 +44,7 @@
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/classes/enqueue-assets.php';
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/classes/dynamic-style.php';
             require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/classes/fonts-loader.php';
-            require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/classes/support-svg.php';
+            require_once trailingslashit( NEXA_PLUGIN_DIR ) . '/inc/classes/list-ajax.php';
 
             // Nexa Admin 
             if( is_admin() ) {

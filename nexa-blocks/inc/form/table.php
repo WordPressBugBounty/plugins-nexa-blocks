@@ -70,7 +70,9 @@ class Nexa_Table_Manager {
         global $wpdb;
         
         $table_name = $this->table_name;
-        return $wpdb->get_var( $wpdb->prepare( 
+        
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+        return $wpdb->get_var( $wpdb->prepare(
             'SHOW TABLES LIKE %s', 
             $table_name 
         ) ) === $table_name;
